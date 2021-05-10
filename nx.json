@@ -1,27 +1,22 @@
 {
   "npmScope": "electron-camera-app",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": {}
+  "projects": {
+    "frontend-camera-app": { "tags": [] },
+    "frontend-camera-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["frontend-camera-app"]
+    },
+    "electron-camera-app": { "tags": [] }
+  }
 }
